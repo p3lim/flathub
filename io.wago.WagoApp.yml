@@ -1,0 +1,71 @@
+id: io.wago.WagoApp
+
+sdk: org.freedesktop.Sdk
+runtime: org.freedesktop.Platform
+runtime-version: &runtime-version '24.08'
+base: org.electronjs.Electron2.BaseApp
+base-version: *runtime-version
+
+command: start-wagoapp
+separate-locales: false # this is provided by the AppImage and handled internally by the app
+
+finish-args:
+  # network access
+  - --share=network
+  # hardware acceleration
+  - --device=dri
+  # electron requirements (X11 + XShm)
+  - --socket=x11
+  - --share=ipc
+  # tray icon support
+  - --talk-name=org.kde.StatusNotifierWatcher
+  # typical locations of game installations
+  - --fileysstem=~/.wine
+  - --filesystem=~/Games # lutris
+  - --filesystem=~/.var/app/net.lutris.Lutris/data/lutris
+  - --filesystem=~/.var/app/com.usebottles.bottles/data/bottles
+  - --filesystem=~/.var/app/heroicgameslauncher.hgl/data
+  - --fileysstem=~/.steam
+  - --filesystem=~/.var/app/com.valvesoftware.Steam/data
+  - --filesystem=~/.PlayOnLinux
+  - --filesystem=~/.var/app/com.playonlinux.PlayOnLinux4/data
+
+modules:
+  - name: WagoApp
+    buildsystem: simple
+    build-commands:
+      # unpack AppImage
+      - chmod +x WagoApp.AppImage
+      - ./WagoApp.AppImage --appimage-extract
+      # update desktop file to run wrapper script and update icon path
+      - desktop-file-edit --set-key=Exec --set-value="start-wagoapp %U" --set-icon=$FLATPAK_ID squashfs-root/WagoApp.desktop
+      # install desktop file
+      - install -D squashfs-root/WagoApp.desktop "${FLATPAK_DEST}/share/applications/${FLATPAK_ID}.desktop"
+      # install icons
+      - |
+        for size in 16 32 48 64 128 256 512; do
+          install -D "squashfs-root/usr/share/icons/hicolor/${size}x${size}/apps/WagoApp.png" \
+            "${FLATPAK_DEST}/share/icons/hicolor/${size}x${size}/apps/${FLATPAK_ID}.png"
+        done
+      # copy metadata file
+      - install -D "${FLATPAK_ID}.metainfo.xml" -t "${FLATPAK_DEST}/share/metainfo/"
+      # install wrapper script
+      - install -Dm755 start-wagoapp "${FLATPAK_DEST}/bin/start-wagoapp"
+      # copy rest of the source
+      - mv squashfs-root "${FLATPAK_DEST}/bin/wagoapp"
+    sources:
+      # app source
+      - type: file
+        dest-filename: WagoApp.AppImage
+        url: https://wago-addons.ams3.digitaloceanspaces.com/wagoapp/WagoApp_2.6.3.AppImage
+        sha256: 5e582201a3836cbefeaa0586e925f63e13df94cb1ba5872fb1502a0b99555666
+        only-arches:
+          - x86_64
+      # wrapper script
+      - type: script
+        dest-filename: start-wagoapp
+        commands:
+          - zypak-wrapper /app/bin/wagoapp/WagoApp "$@"
+      # metadata
+      - type: file
+        path: io.wago.WagoApp.metainfo.xml

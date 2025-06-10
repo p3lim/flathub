@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component type="desktop-application">
+  <id>io.wago.WagoApp</id>
+  <name>Wago App</name>
+  <launchable type="desktop-id">io.wago.WagoApp.desktop</launchable>
+  <developer id="io.wago">
+    <name>Method Gaming Limited</name>
+  </developer>
+  <metadata_license>CC0-1.0</metadata_license>
+  <url type="homepage">https://addons.wago.io</url>
+  <summary>TODO</summary>
+  <description>TODO</description>
+  <screenshots>
+    <screenshot type="default">
+      <image>https://addons.wago.io/images/landing/wago-app-landing-page-preview.jpg</image>
+    </screenshot>
+  </screenshots>
+  <categories>
+    <category>Network</category>
+    <category>Utility</category>
+  </categories>
+  <requires>
+    <internet>always</internet>
+  </requires>
+  <recommends>
+    <control>pointing</control>
+    <control>keyboard</control>
+    <display_length compare="ge">768</display_length>
+  </recommends>
+</component>
