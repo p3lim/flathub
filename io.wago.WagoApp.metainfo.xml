@@ -4,7 +4,7 @@
   <name>Wago App</name>
   <launchable type="desktop-id">io.wago.WagoApp.desktop</launchable>
   <developer id="io.wago">
-    <name>Method Gaming Limited</name>
+    <name>The Wago Dev Team</name>
   </developer>
   <metadata_license>CC0-1.0</metadata_license>
   <url type="homepage">https://addons.wago.io</url>
