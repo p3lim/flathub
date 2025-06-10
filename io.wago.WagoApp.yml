@@ -20,12 +20,12 @@ finish-args:
   # tray icon support
   - --talk-name=org.kde.StatusNotifierWatcher
   # typical locations of game installations
-  - --fileysstem=~/.wine
+  - --filesystem=~/.wine
   - --filesystem=~/Games # lutris
   - --filesystem=~/.var/app/net.lutris.Lutris/data/lutris
   - --filesystem=~/.var/app/com.usebottles.bottles/data/bottles
   - --filesystem=~/.var/app/heroicgameslauncher.hgl/data
-  - --fileysstem=~/.steam
+  - --filesystem=~/.steam
   - --filesystem=~/.var/app/com.valvesoftware.Steam/data
   - --filesystem=~/.PlayOnLinux
   - --filesystem=~/.var/app/com.playonlinux.PlayOnLinux4/data
