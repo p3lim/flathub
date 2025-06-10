@@ -14,7 +14,7 @@
   <description>
     <p>The Wago App is your all-in-one solution to download and update your World of Warcraft AddOns and WeakAuras.</p>
     <p>Note: if the game is installed to a non-standard path, let Wago App access it:</p>
-    <p>flatpak override --filesystem=/path/to/your/wow io.wago.WagoApp</p>
+    <p><code>flatpak override --filesystem=/path/to/your/wow io.wago.WagoApp</code></p>
   </description>
   <screenshots>
     <screenshot type="default">
