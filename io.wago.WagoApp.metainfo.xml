@@ -6,6 +6,7 @@
   <developer id="io.wago">
     <name>The Wago Dev Team</name>
   </developer>
+  <project_license>LicenseRef-proprietary</project_license>
   <metadata_license>CC0-1.0</metadata_license>
   <url type="homepage">https://addons.wago.io</url>
   <url type="contact">https://addons.wago.io/contact</url>
