@@ -8,8 +8,12 @@
   </developer>
   <metadata_license>CC0-1.0</metadata_license>
   <url type="homepage">https://addons.wago.io</url>
-  <summary>TODO</summary>
-  <description>TODO</description>
+  <summary>World of Warcraft AddOn Manager</summary>
+  <description>
+    <p>The Wago App is your all-in-one solution to download and update your World of Warcraft AddOns and WeakAuras.</p>
+    <p>Note: if the game is installed to a non-standard path, let Wago App access it:</p>
+    <p>flatpak override --filesystem=/path/to/your/wow io.wago.WagoApp</p>
+  </description>
   <screenshots>
     <screenshot type="default">
       <image>https://addons.wago.io/images/landing/wago-app-landing-page-preview.jpg</image>
