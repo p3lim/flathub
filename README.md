@@ -11,4 +11,3 @@ If you store games in a non-standard location, you'll need to enable access to t
 ### Tray
 
 To get a working tray icon on GNOME, install the [appindicator-support](https://extensions.gnome.org/extension/615/appindicator-support/) extension.
-
