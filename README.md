@@ -15,6 +15,8 @@ To get a working tray icon on GNOME, install the [appindicator-support](https://
 
 ## Development
 
+> This whole section needs to be removed before we publish
+
 Missing/recommended:
 
 - [ ] get a confirmation from Wago team if the metadata looks right
