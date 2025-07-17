@@ -38,9 +38,13 @@ modules:
       - chmod +x WagoApp.AppImage
       - ./WagoApp.AppImage --appimage-extract
       # update desktop file to run wrapper script and update icon path
-      - desktop-file-edit --set-key=Exec --set-value="start-wagoapp %U" --set-icon=$FLATPAK_ID squashfs-root/WagoApp.desktop
+      - |
+        desktop-file-edit --set-key=Exec --set-value="start-wagoapp %U" \
+          --set-icon=$FLATPAK_ID squashfs-root/WagoApp.desktop
       # install desktop file
-      - install -D squashfs-root/WagoApp.desktop "${FLATPAK_DEST}/share/applications/${FLATPAK_ID}.desktop"
+      - |
+        install -D squashfs-root/WagoApp.desktop \
+          "${FLATPAK_DEST}/share/applications/${FLATPAK_ID}.desktop"
       # install icons
       - |
         for size in 16 32 64 128 256 512; do
@@ -50,7 +54,9 @@ modules:
         install -D "icons/hicolor/scalable/apps/WagoApp.svg" \
           "${FLATPAK_DEST}/share/icons/hicolor/scalable/apps/${FLATPAK_ID}.svg"
       # fix desktop file keywords (this should be fixed in the AppImage in the future)
-      - desktop-file-edit --set-key=Keywords --set-value="addons,wow,warcraft,weakauras" "${FLATPAK_DEST}/share/applications/${FLATPAK_ID}.desktop"
+      - |
+        desktop-file-edit --set-key=Keywords --set-value="addons,wow,warcraft,weakauras" \
+          "${FLATPAK_DEST}/share/applications/${FLATPAK_ID}.desktop"
       # copy metadata file
       - install -D "${FLATPAK_ID}.metainfo.xml" -t "${FLATPAK_DEST}/share/metainfo/"
       # install wrapper script
