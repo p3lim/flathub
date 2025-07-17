@@ -43,8 +43,8 @@ modules:
       - install -D squashfs-root/WagoApp.desktop "${FLATPAK_DEST}/share/applications/${FLATPAK_ID}.desktop"
       # install icons
       - |
-        for size in 16 32 48 64 128 256 512; do
-          install -D "squashfs-root/usr/share/icons/hicolor/${size}x${size}/apps/WagoApp.png" \
+        for size in 16 32 64 128 256 512; do
+          install -D "icons/hicolor/${size}x${size}/apps/WagoApp.png" \
             "${FLATPAK_DEST}/share/icons/hicolor/${size}x${size}/apps/${FLATPAK_ID}.png"
         done
       # copy metadata file
@@ -69,3 +69,6 @@ modules:
       # metadata
       - type: file
         path: io.wago.WagoApp.metainfo.xml
+      # externally provided icons (these should be provided by the AppImage in the future)
+      - type: dir
+        path: icons
