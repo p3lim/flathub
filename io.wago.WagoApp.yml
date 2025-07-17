@@ -47,6 +47,8 @@ modules:
           install -D "icons/hicolor/${size}x${size}/apps/WagoApp.png" \
             "${FLATPAK_DEST}/share/icons/hicolor/${size}x${size}/apps/${FLATPAK_ID}.png"
         done
+        install -D "icons/hicolor/scalable/apps/WagoApp.svg" \
+          "${FLATPAK_DEST}/share/icons/hicolor/scalable/apps/${FLATPAK_ID}.svg"
       # fix desktop file keywords (this should be fixed in the AppImage in the future)
       - desktop-file-edit --set-key=Keywords --set-value="addons,wow,warcraft,weakauras" "${FLATPAK_DEST}/share/applications/${FLATPAK_ID}.desktop"
       # copy metadata file
