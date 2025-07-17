@@ -32,7 +32,7 @@ Missing/recommended:
 The flatpak needs access to `$HOME/.var/app` in order to access other programs like game launchers.  
 This is not permitted for flathub flatpaks unless explicitly asked for it, so we'll have to deal with that before the PR (once created) can be merged.
 
-This is done by forking the [flatpak-builder-link](https://github.com/flathub-infra/flatpak-builder-lint) repo and modifying/appending the following to `flatpak_builder_lint/staticfiles/exceptions.json`:
+This is done by forking the [flatpak-builder-lint](https://github.com/flathub-infra/flatpak-builder-lint) repo and modifying/appending the following to `flatpak_builder_lint/staticfiles/exceptions.json`:
 
 ```json
 "io.wago.WagoApp": {
