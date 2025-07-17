@@ -26,6 +26,8 @@ Missing/recommended:
 - [ ] icons missing 48x48
 - [ ] desktop file keyword changes should be added to the AppImage directly
 - [ ] which Wago team members wants/needs access/ownership of the GitHub repo under the flathub organization
+- [ ] see if we can set up [data checker](https://docs.flathub.org/docs/for-app-authors/external-data-checker) to automate some work
+  - this is unless the Wago team wants to push this themselves, this tool can scrape a "latest" endpoint (which should redirect to the actual (versioned) AppImage)
 
 ### Exception
 
