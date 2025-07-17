@@ -59,8 +59,8 @@ modules:
       # app source
       - type: file
         dest-filename: WagoApp.AppImage
-        url: https://wago-addons.ams3.digitaloceanspaces.com/wagoapp/WagoApp_2.6.3.AppImage
-        sha256: 5e582201a3836cbefeaa0586e925f63e13df94cb1ba5872fb1502a0b99555666
+        url: https://wago-addons.ams3.digitaloceanspaces.com/wagoapp/WagoApp_2.6.4.AppImage
+        sha256: 95058cba3c0ca7d9e0ff091d8cbad1e504934d9aa72459daf51070535ee473af
         only-arches:
           - x86_64
       # wrapper script
